@@ -1,44 +1,36 @@
-Trabalho de POO - Caixa de Supermercado
+# Caixa de Supermercado - Trabalho de POO
 
-Olá a todos! Este é o projeto desenvolvido como parte do trabalho da disciplina de Programação Orientada a Objetos (POO) pelo aluno João Lucas Fernandes Santos, sob a orientação do Professor Luis Chaves.
+Bem-vindo ao projeto de Caixa de Supermercado, desenvolvido como parte do trabalho da disciplina de Programação Orientada a Objetos (POO) pelo aluno João Lucas Fernandes Santos, sob a orientação do Professor Luis Chaves.
 
-Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-• Linguagem de Programação: C#
+- **Linguagem de Programação:** C#
+- **Ambiente de Desenvolvimento:** Microsoft Visual Studio
 
-• Ambiente de Desenvolvimento: Microsoft Visual Studio
+## Sobre o Projeto
 
-Sobre o Projeto
+Este projeto tem como objetivo simular uma experiência de caixa de supermercado automatizada, permitindo que os usuários escaneiem produtos, calculem o total da compra, escolham diferentes formas de pagamento e recebam um recibo.
 
-Imagine entrar em um supermercado e ter uma experiência de caixa automatizada. Este programa em C# traz essa ideia à vida, permitindo que os usuários escaneiem produtos, calculem o total da compra, escolham diferentes formas de pagamento e recebam um recibo.
+## Principais Funcionalidades
 
-Principais Funcionalidades
+### Estrutura do Código
 
-Como o Código Está Organizado
+O código está organizado da seguinte forma:
 
-• Na classe Program, o código herda características da classe Caixa e implementa métodos específicos, como EmitirSom e ReiniciarPrograma.
+- **Program:** Herda características da classe `Caixa` e implementa métodos específicos, como `EmitirSom` e `ReiniciarPrograma`.
+- **Caixa:** Define a estrutura básica do processo de compra, utilizando a interface `IPagamento` e classes concretas como `PagamentoDebito`, `PagamentoCredito` e `PagamentoAVista`.
+- **Produto:** Representa um item comprado.
+- **PagamentoFactory:** Cria instâncias de objetos com base na opção escolhida para o pagamento.
 
-• A classe abstrata Caixa define a estrutura básica do processo de compra.
+### Como Utilizar
 
-• A interface IPagamento é utilizada para definir os métodos relacionados ao pagamento.
-
-• As classes concretas PagamentoDebito, PagamentoCredito e PagamentoAVista implementam a interface IPagamento.
-
-• A classe PagamentoFactory cria instâncias de objetos com base na opção escolhida para o pagamento.
-
-• A classe Produto é uma representação simples de um item comprado.
-
-Como Utilizar
-
-• Execute o programa.
-
-• Siga as instruções para inserir os produtos e escolher as opções de pagamento.
-
-• Observe a nota fiscal gerada e decida se deseja reiniciar o programa.
-
-Dicas Importantes
-
-• Ao inserir os dados, lembre-se de usar valores válidos.
-
-• Ah, e não se esqueça: o programa emite sons simples durante algumas interações para tornar a experiência mais amigável!
-
+1. **Execução do Programa:**
+   - Clone este repositório.
+   - Execute o programa.
+  
+2. **Instruções para Utilização:**
+   - Siga as instruções para inserir os produtos e escolher as opções de pagamento.
+  
+3. **Observações Importantes:**
+   - Certifique-se de inserir valores válidos durante a entrada dos dados.
+   - O programa emite sons simples durante algumas interações para tornar a experiência mais amigável.
