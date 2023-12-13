@@ -5,7 +5,7 @@ Bem-vindo ao projeto de Caixa de Supermercado, desenvolvido como parte do trabal
 ## Tecnologias Utilizadas
 
 - **Linguagem de Programação:** C#
-- **Ambiente de Desenvolvimento:** Microsoft Visual Studio
+- **Ambiente de Desenvolvimento:** Microsoft Visual Studio, Visual Studio Code, C# Shell.NET IDE
 
 ## Sobre o Projeto
 
