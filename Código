@@ -1,4 +1,8 @@
 using System;
+using System.Linq;
+using System.Collections.Generic;
+
+using System;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -127,6 +131,7 @@ namespace programaCaixasupermercado
 
             AgradecerVolteSempre();
             Proximo();
+            PassarCompras();
         }
 
         public void EmitirNota(int opcaoPagamento, double pagamento, double troco)
