@@ -1,4 +1,42 @@
-using System;
+# Caixa de Supermercado - Trabalho de POO
+
+Bem-vindo ao projeto de Caixa de Supermercado, desenvolvido como parte do trabalho da disciplina de Programação Orientada a Objetos (POO) pelo aluno João Lucas Fernandes Santos, sob a orientação do Professor Luis Chaves.
+
+## Tecnologias Utilizadas
+
+- **Linguagem de Programação:** C#
+- **Ambiente de Desenvolvimento:** Microsoft Visual Studio, Visual Studio Code, C# Shell.NET IDE
+
+## Sobre o Projeto
+
+Este projeto tem como objetivo simular uma experiência de caixa de supermercado automatizada, permitindo que os usuários escaneiem produtos, calculem o total da compra, escolham diferentes formas de pagamento e recebam um recibo.
+
+## Principais Funcionalidades
+
+### Estrutura do Código
+
+O código está organizado da seguinte forma:
+
+- **Program:** Herda características da classe `Caixa` e implementa métodos específicos, como `EmitirSom` e `ReiniciarPrograma`.
+- **Caixa:** Define a estrutura básica do processo de compra, utilizando a interface `IPagamento` e classes concretas como `PagamentoDebito`, `PagamentoCredito` e `PagamentoAVista`.
+- **Produto:** Representa um item comprado.
+- **PagamentoFactory:** Cria instâncias de objetos com base na opção escolhida para o pagamento.
+
+### Como Utilizar
+
+1. **Execução do Programa:**
+   - Clone este repositório.
+   - Execute o programa.
+  
+2. **Instruções para Utilização:**
+   - Siga as instruções para inserir os produtos e escolher as opções de pagamento.
+  
+3. **Observações Importantes:**
+   - Certifique-se de inserir valores válidos durante a entrada dos dados.
+   - O programa emite sons simples durante algumas interações para tornar a experiência mais amigável.
+  
+   - ## Código:
+   - using System;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -15,12 +53,14 @@ namespace programaCaixasupermercado
             Program programa = new Program();
             programa.PassarCompras();
         }
+        //encapsulamento e emitir som
 
         protected override void EmitirSom(string mensagem)
         {
             Console.WriteLine(mensagem);
             Console.Beep();
         }
+        //metodo do loop
 
         public override void ReiniciarPrograma()
         {
@@ -33,6 +73,7 @@ namespace programaCaixasupermercado
             PassarCompras();
         }
     }
+    //principal
 
     public abstract class Caixa
     {
@@ -53,7 +94,7 @@ namespace programaCaixasupermercado
 
                 Console.WriteLine("Digite a quantidade do produto: ");
                 double quantidade = Convert.ToDouble(Console.ReadLine());
-
+                     Console.beep();
                 Produto produto = new Produto(nome, item, quantidade);
                 produtos.Add(produto);
                 somaTotal += (quantidade * item);
@@ -68,6 +109,8 @@ namespace programaCaixasupermercado
                 }
             } while (continuar);
         }
+
+        //abstrato som e reinicio
 
         protected abstract void EmitirSom(string mensagem);
 
@@ -84,6 +127,7 @@ namespace programaCaixasupermercado
         }
 
         public abstract void ReiniciarPrograma();
+        //pagamentos
 
         public void Pagar()
         {
@@ -95,7 +139,7 @@ namespace programaCaixasupermercado
 
             int opcaoPagamento;
 
-            // Loop para garantir uma opção válida
+            // Loop de validação e retorno 
             do
             {
                 Console.WriteLine("Escolha a opção de pagamento (1, 2 ou 3): ");
@@ -133,7 +177,7 @@ namespace programaCaixasupermercado
             Proximo();
             PassarCompras();
         }
-
+               //nota fiscal
         public void EmitirNota(int opcaoPagamento, double pagamento, double troco)
         {
             Console.WriteLine("---------------------------------------------------");
@@ -160,7 +204,7 @@ namespace programaCaixasupermercado
             Console.ReadLine();
         }
     }
-
+         //o returno dos pagaentos tipos
     public interface IPagamento
     {
         double Pagar(double total);
@@ -207,7 +251,7 @@ namespace programaCaixasupermercado
             }
         }
     }
-
+      //produtos 
     public class Produto
     {
         public string Nome { get; set; }
