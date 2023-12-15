@@ -53,12 +53,14 @@ namespace programaCaixasupermercado
             Program programa = new Program();
             programa.PassarCompras();
         }
+        //encapsulamento e emitir som
 
         protected override void EmitirSom(string mensagem)
         {
             Console.WriteLine(mensagem);
             Console.Beep();
         }
+        //metodo do loop
 
         public override void ReiniciarPrograma()
         {
@@ -71,6 +73,7 @@ namespace programaCaixasupermercado
             PassarCompras();
         }
     }
+    //principal
 
     public abstract class Caixa
     {
@@ -91,7 +94,7 @@ namespace programaCaixasupermercado
 
                 Console.WriteLine("Digite a quantidade do produto: ");
                 double quantidade = Convert.ToDouble(Console.ReadLine());
-
+                     Console.beep();
                 Produto produto = new Produto(nome, item, quantidade);
                 produtos.Add(produto);
                 somaTotal += (quantidade * item);
@@ -106,6 +109,8 @@ namespace programaCaixasupermercado
                 }
             } while (continuar);
         }
+
+        //abstrato som e reinicio
 
         protected abstract void EmitirSom(string mensagem);
 
@@ -122,6 +127,7 @@ namespace programaCaixasupermercado
         }
 
         public abstract void ReiniciarPrograma();
+        //pagamentos
 
         public void Pagar()
         {
@@ -133,7 +139,7 @@ namespace programaCaixasupermercado
 
             int opcaoPagamento;
 
-            // Loop para garantir uma opção válida
+            // Loop de validação e retorno 
             do
             {
                 Console.WriteLine("Escolha a opção de pagamento (1, 2 ou 3): ");
@@ -171,7 +177,7 @@ namespace programaCaixasupermercado
             Proximo();
             PassarCompras();
         }
-
+               //nota fiscal
         public void EmitirNota(int opcaoPagamento, double pagamento, double troco)
         {
             Console.WriteLine("---------------------------------------------------");
@@ -198,7 +204,7 @@ namespace programaCaixasupermercado
             Console.ReadLine();
         }
     }
-
+         //o returno dos pagaentos tipos
     public interface IPagamento
     {
         double Pagar(double total);
@@ -245,7 +251,7 @@ namespace programaCaixasupermercado
             }
         }
     }
-
+      //produtos 
     public class Produto
     {
         public string Nome { get; set; }
